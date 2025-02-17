@@ -1,73 +1,139 @@
-
 # CSS Nesting Exercise 🌱
 
-## Overview  
-In this exercise, you will refactor a given CSS file to make use of **native CSS nesting**. This will help you simplify and organize your styles while keeping everything in standard CSS. You’ll explore the **nested syntax** and understand how to structure styles more logically.
+## Overview
+In this exercise, you'll learn to use native CSS nesting to transform a standard CSS file into a more maintainable and organized structure. You'll work with a complete website layout featuring navigation, cards, and interactive elements, refactoring the CSS to use modern nesting techniques.
 
----
-
-## Instructions  
-
-### 1️⃣ Setup  
-1. Clone this repository:  
+## Setup
+1. Clone the repository:
    ```sh
    git clone https://github.com/Vince-Colson-TM/css_nesting_exercise.git
    ```
-2. Open `index.html` in a browser.  
-3. Open `styles.css` and start refactoring by following the next steps.
+2. Open `index.html` in your browser
+3. Review the current `styles.css` file structure
 
----
+## Part 1: Navigation Component
+### Task
+Refactor the navigation styles using CSS nesting.
 
-### 2️⃣ Refactor with Native CSS Nesting  
-- Identify **related styles** (e.g., element-specific styles, child elements) that can be grouped together.  
-- Use **native CSS nesting** to organize these relationships more logically.  
-- Follow the **native CSS nesting syntax**, where nested selectors are placed inside the parent block.
+### Requirements
+- Nest all navigation-related styles within the `.nav` selector
+- Move the mobile menu media query into the relevant nested structure
+- Maintain the hover state for navigation links
 
-✅ **What to do?**  
-- Group the styles for **buttons**, **cards**, and **headings** inside their respective parent selectors.  
-- Ensure all elements still look the same after refactoring.  
+### Example of CSS Nesting
+```css
+/* Simple nesting example */
+.parent {
+    color: blue;
+    
+    & .child {
+        color: red;
+        
+        &:hover {
+            color: green;
+        }
+    }
+}
+```
 
----
+## Part 2: Button Components
+### Task
+Refactor button styles to use nesting for variants and states.
 
-### 3️⃣ Nest Media Queries  
-- Use native CSS nesting to **nest media queries** within relevant components.  
-- Ensure that the layout is responsive and elements adjust appropriately for **different screen sizes**.  
+### Requirements
+- Nest primary and secondary button styles within the main button class
+- Add hover and focus states using nesting
+- Include transition effects for smooth state changes
 
-✅ **What to do?**  
-- Move the existing media queries into the relevant **parent selector** (e.g., for `.card` or `.button`).  
-- Nest media queries where the styles will apply, maintaining the overall readability of your CSS.
+### Example of State Nesting
+```css
+.element {
+    background: white;
+    
+    &:hover {
+        background: gray;
+    }
+    
+    &.variant {
+        /* Variant styles */
+    }
+}
+```
 
----
+## Part 3: Card Component
+### Task
+Refactor the card component using CSS nesting.
 
-### 4️⃣ Refactor Specific Styles with Nesting  
-- Simplify specific styles such as **hover states**, **focus styles**, and **active states** by nesting them within the relevant selectors.  
-- This will keep your code **cleaner and more maintainable**.  
+### Requirements
+- Nest all card-related styles within the main card selector
+- Add hover effects for cards using nested selectors
+- Use flexbox for the card layout structure
+- Maintain proper spacing and typography
 
-✅ **What to do?**  
-- Nest the `:hover`, `:focus`, and `:active` states for buttons, links, or any other interactive elements within their parent selector.  
-- Ensure these states still work properly after the refactor.
+### Success Criteria
+- Cards should maintain their current appearance
+- Hover effects should work smoothly
+- All styles should be properly nested
+- Layout should be responsive using flexbox
 
----
+## Part 4: Responsive Layout
+### Task
+Integrate media queries within their respective components.
 
-### 5️⃣ Add and Refactor a New Component  
-- Add a new component such as a **footer** or **sidebar**, and apply **native CSS nesting** for related child elements.  
-- Make sure that the new styles are properly organized and that the footer or sidebar works correctly.
+### Requirements
+- Nest media queries within their related components
+- Ensure responsive behavior matches the original design
+- Use consistent breakpoints throughout (768px and 480px)
 
-✅ **What to do?**  
-- Create a new component (`.footer` or `.sidebar`) and nest styles for its child elements (e.g., links, lists).  
-- Ensure the layout remains correct after the changes.
+### Example of Nested Media Queries
+```css
+.component {
+    display: flex;
+    
+    @media (max-width: 768px) {
+        /* Tablet styles */
+    }
+    
+    & .child {
+        /* Child styles */
+        
+        @media (max-width: 480px) {
+            /* Mobile styles */
+        }
+    }
+}
+```
 
----
+## Part 5: Footer Component (Bonus)
+### Task
+Create a new footer component using CSS nesting.
 
-## 🎯 Extra Challenge (Optional)  
-Explore **advanced CSS nesting techniques**, such as combining **descendant selectors** and **state-dependent selectors**, to enhance your layout and interactions.
+### Requirements
+- Create a responsive footer with multiple columns
+- Include hover states for links
+- Use nested media queries for responsive design
+- Add a bottom border and copyright section
 
----
+### Example Structure
+```html
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>About</h3>
+            <ul>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Team</a></li>
+            </ul>
+        </div>
+        <!-- Add more sections as needed -->
+    </div>
+</footer>
+```
 
-## ✅ Learning Outcomes  
+## ✅ Learning Outcomes
 By completing this exercise, you will:  
 ✔ Learn **how to use native CSS nesting** for better style organization.  
 ✔ Understand **how to structure media queries** within relevant components.  
 ✔ Discover the benefits of **grouping related styles** together for readability and maintainability.  
 ✔ Implement **hover, focus, and active states** using nesting for clean code.  
-✔ Improve the **responsiveness and maintainability** of your design with native CSS nesting.  
+✔ Improve the **responsiveness and maintainability** of your design with native CSS nesting. 
