@@ -88,19 +88,28 @@ Integrate media queries within their respective components.
 ### Example of Nested Media Queries
 ```css
 .component {
-    display: flex;
-    
-    @media (max-width: 768px) {
-        /* Tablet styles */
-    }
-    
-    & .child {
-        /* Child styles */
-        
-        @media (max-width: 480px) {
-            /* Mobile styles */
-        }
-    }
+   
+   /* Base styles for mobile-first */
+
+   @media screen and (min-width: 480px) {
+      /* Styles for screens larger than 480px (tablet and up) */
+   }
+
+   @media screen and (min-width: 768px) {
+      /* Styles for screens larger than 768px (tablet landscape and up) */
+   }
+
+   & .child {
+      /* Child styles for mobile by default */
+
+      @media screen and (min-width: 480px) {
+         /* Styles for screens larger than 480px (tablet and up) */
+      }
+
+      @media screen and (min-width: 768px) {
+         /* Styles for screens larger than 768px (tablet landscape and up) */
+      }
+   }
 }
 ```
 
