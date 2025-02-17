@@ -1,5 +1,5 @@
 
-# Native CSS Nesting Exercise 🌱
+# CSS Nesting Exercise 🌱
 
 ## Overview  
 In this exercise, you will refactor a given CSS file to make use of **native CSS nesting**. This will help you simplify and organize your styles while keeping everything in standard CSS. You’ll explore the **nested syntax** and understand how to structure styles more logically.
